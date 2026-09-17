@@ -90,7 +90,7 @@ python3 -m http.server 8000
 
 브라우저에서 `http://localhost:8000`에 접속한다. Bootstrap CDN을 불러오려면 인터넷 연결이 필요하다.
 
-로컬 정적 검사로 다섯 페이지의 공통 CSS, viewport, 내부 링크, 중복 ID를 확인했다. JavaScriptCore에서 샘플 데이터, 9개 검증 조건, 연도 범위, HTML 이스케이프, 추가·수정·삭제 저장, 빈 목록 유지, 손상된 저장소 처리를 확인했다. 실제 브라우저의 화면과 confirm/alert 동작, 배포 URL은 아직 검증하지 않았다.
+로컬 정적 검사로 다섯 페이지의 공통 CSS, viewport, 내부 링크, 중복 ID를 확인했다. JavaScriptCore에서 샘플 데이터, 9개 검증 조건, 연도 범위, HTML 이스케이프, 추가·수정·삭제 저장, 빈 목록 유지, 손상된 저장소 처리를 확인했다. 2026-09-17 배포 URL의 `/`, `/example.html`, `/add.html`, `/view.html`, `/edit.html`, `/my.css`, `/js/app.js`가 모두 HTTP 200으로 응답하고 프로젝트 내용이 제공되는 것을 확인했다. 실제 브라우저의 Desktop/Mobile 화면과 confirm/alert 동작은 아직 검증하지 않았다.
 
 제출 전 브라우저에서 확인할 항목:
 
@@ -105,7 +105,7 @@ python3 -m http.server 8000
 - 개인 GitHub Repository: https://github.com/distort1074/assign03-c02-22300344
 - 배포 브랜치: `master`. Vercel 프로젝트의 Production Branch도 `master`로 설정한다.
 - 이중 배포를 위해 `origin`의 push URL에 두 저장소를 등록했다. `git push origin master`로 두 저장소에 같은 커밋을 전송한다. `personal` remote는 개인 저장소를 개별 조회하거나 push할 때 사용한다. 각 배포 사이트가 해당 저장소를 연결해야 자동 배포된다.
-- Vercel Deploy URL: 배포 후 입력 필요.
+- Vercel Deploy URL: https://assign03-c02-22300344.vercel.app
 - Vercel에서는 GitHub 저장소를 연결하고 Framework Preset을 Other로 설정한다. 정적 HTML 프로젝트이므로 별도 빌드 명령이 필요하지 않다.
 - 배포 후 `/`, `/example.html`, `/add.html`, `/view.html`, `/edit.html` 접근과 Desktop/Mobile 화면을 확인한다.
 - Google Form 퀴즈 제출: 아직 미제출. 아래 초안으로 직접 제출한다.
