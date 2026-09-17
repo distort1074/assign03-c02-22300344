@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stylesheet 2</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #d14836;
+      color: #000000;
+      margin: 0;
+      padding: 10px;
+    }
+
+    #top {
+      color: white;
+      padding: 10px 15px 25px 15px;
+    }
+
+    #top h1 {
+      font-size: 50px;
+      margin: 0 0 15px 0;
+    }
+
+    #top p {
+      font-size: 24px;
+      margin: 0;
+    }
+
+    #wrapper {
+      background-color: white;
+      position: relative;
+      padding: 20px 220px 20px 15px;
+      min-height: 230px;
+    }
+
+    #main h2 {
+      color: #d14836;
+      margin-top: 5px;
+    }
+
+    #main a {
+      color: #d14836;
+    }
+
+    #menubar {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      width: 180px;
+    }
+
+    #menubar ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #menubar li {
+      background-color: #d14836;
+      color: white;
+      text-align: center;
+      padding: 8px;
+      margin-bottom: 10px;
+      border-radius: 20px;
+      border: 1px solid #d14836;
+      font-weight: bold;
+    }
+
+    #menubar li a {
+      color: white;
+      text-decoration: none;
+      display: block;
+    }
+
+    #menubar li:nth-child(2) {
+      background-color: white;
+      color: #d14836;
+    }
+
+    #menubar li:nth-child(2) a {
+      color: #d14836;
+    }
+
+    #sidebar {
+      background-color: #f6d5d0;
+      color: #d14836;
+      padding: 20px 15px;
+    }
+
+    #sidebar h3 {
+      margin-top: 0;
+    }
+
+    #bottom {
+      color: white;
+      text-align: center;
+      font-size: 12px;
+      padding: 15px;
+    }
+
+    #bottom a {
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="top">
+    <h1>Welcome to Baesan's Homepage (22300344)</h1>
+    <p>Use the menu to select different Stylesheets</p>
+  </div>
+
+  <div id="wrapper">
+
+    <div id="menubar">
+      <ul>
+        <li><a href="style1.html">Stylesheet 1</a></li>
+        <li><a href="style2.html">Stylesheet 2</a></li>
+        <li>Stylesheet 3</li>
+        <li>Stylesheet 4</li>
+        <li><a href="nostyle.html">No Stylesheet</a></li>
+      </ul>
+    </div>
+
+    <div id="main">
+
+      <h2>Same Page Different Stylesheets</h2>
+
+      <p>
+        This is a demonstration of how different stylesheets can change
+        the layout of an HTML page.
+        You can change the layout of this page by selecting different
+        stylesheets in the menu.
+      </p>
+
+      <p>
+        <a href="style1.html">Stylesheet 1</a>,
+        <a href="style2.html">Stylesheet 2</a>
+      </p>
+
+      <h2>No Styles</h2>
+
+      <p>
+        This page uses DIV elements to group different sections of
+        the HTML page.
+        Click here to see how the page looks with no stylesheet:
+      </p>
+
+      <a href="nostyle.html">No Stylesheet</a>
+
+    </div>
+
+  </div>
+
+  <div id="sidebar">
+    <h3>Side-Bar</h3>
+
+    <p>
+      Name: Baesan<br>
+      Student ID: 22300344
+    </p>
+  </div>
+
+  <div id="bottom">
+    <p>Open Source Studio - Assignment 02</p>
+    <a href="index.html">Home</a>
+  </div>
+
+</body>
+</html>
