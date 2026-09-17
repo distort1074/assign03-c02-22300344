@@ -101,7 +101,10 @@ python3 -m http.server 8000
 
 ## Deployment & Submission
 
-- GitHub Repository: https://github.com/2026-2-OSS/assign03-c02-22300344
+- 수업 GitHub Repository: https://github.com/2026-2-OSS/assign03-c02-22300344
+- 개인 GitHub Repository: https://github.com/distort1074/assign03-c02-22300344
+- 배포 브랜치: `master`. Vercel 프로젝트의 Production Branch도 `master`로 설정한다.
+- 이중 배포를 위해 `origin`의 push URL에 두 저장소를 등록했다. `git push origin master`로 두 저장소에 같은 커밋을 전송한다. `personal` remote는 개인 저장소를 개별 조회하거나 push할 때 사용한다. 각 배포 사이트가 해당 저장소를 연결해야 자동 배포된다.
 - Vercel Deploy URL: 배포 후 입력 필요.
 - Vercel에서는 GitHub 저장소를 연결하고 Framework Preset을 Other로 설정한다. 정적 HTML 프로젝트이므로 별도 빌드 명령이 필요하지 않다.
 - 배포 후 `/`, `/example.html`, `/add.html`, `/view.html`, `/edit.html` 접근과 Desktop/Mobile 화면을 확인한다.
