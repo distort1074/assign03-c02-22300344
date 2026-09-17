@@ -71,7 +71,7 @@ function init() {
   if (page === 'view') {
     if (!book) return missingRecord();
     const urlId = encodeURIComponent(book.id);
-    document.getElementById('book-detail').innerHTML = `<div>${badge(book.status)}</div><h2 class="detail-title mt-3">${escapeHTML(book.title)}</h2><dl class="detail-grid"><div><dt>번호</dt><dd>${escapeHTML(book.id)}</dd></div>${Object.entries(fieldLabels).map(([key,label]) => `<div class="${key === 'memo' ? 'detail-wide' : ''}"><dt>${label}</dt><dd>${escapeHTML(book[key] || '등록된 메모가 없습니다.')}</dd></div>`).join('')}</dl><div class="form-actions"><a class="btn btn-outline-secondary" href="index.html">목록</a><button class="btn btn-outline-danger" id="delete-button" type="button">Delete · 삭제</button><a class="btn btn-primary" href="edit.html?id=${urlId}">Edit · 수정</a></div>`;
+    document.getElementById('book-detail').innerHTML = `<div>${badge(book.status)}</div><h2 class="detail-title mt-3">${escapeHTML(book.title)}</h2><dl class="detail-grid"><div><dt>식별자</dt><dd>${escapeHTML(book.id)}</dd></div>${Object.entries(fieldLabels).map(([key,label]) => `<div class="${key === 'memo' ? 'detail-wide' : ''}"><dt>${label}</dt><dd>${escapeHTML(book[key] || '등록된 메모가 없습니다.')}</dd></div>`).join('')}</dl><div class="form-actions"><a class="btn btn-outline-secondary" href="index.html">목록</a><button class="btn btn-outline-danger" id="delete-button" type="button">Delete · 삭제</button><a class="btn btn-primary" href="edit.html?id=${urlId}">Edit · 수정</a></div>`;
     document.getElementById('delete-button').addEventListener('click', () => {
       if (confirm('이 도서를 삭제할까요? 삭제 후에는 되돌릴 수 없습니다.') && saveBooks(books.filter(b => b.id !== book.id))) location.href = 'index.html';
     });
