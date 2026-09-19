@@ -1,17 +1,16 @@
 :root { --ink: #23342e; --muted: #63756c; --green: #23654d; --line: #dce5df; }
 * { box-sizing: border-box; }
-body { margin: 0; background: #f5f7f3; color: var(--ink); font-family: system-ui, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; }
+body { background: #f5f7f3; color: var(--ink); font-family: system-ui, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; max-width: 1120px; margin: 20px auto; display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 4px; padding: 0 12px; }
 a { color: var(--green); text-underline-offset: 4px; }
 .container { max-width: 1120px; }
-.site-header { background: white; border-bottom: 1px solid var(--line); }
+/* 공통 레이아웃과 폼 */
 .nav-layout, .nav-links, .page-heading, .card-heading, .site-footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-.nav-layout { min-height: 90px; }
 .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); font-size: 23px; font-weight: 750; }
-.brand small { font-size: 10px; letter-spacing: 2px; color: var(--muted); }
+.brand small { font-size: 10px; letter-spacing: 2px; color: white; }
 .brand-icon, .hero-logo { background: var(--green); color: white; border-radius: 12px; padding: 7px 12px; }
 .nav-links > a:not(.btn) { text-decoration: none; color: var(--muted); font-size: 14px; }
 .nav-links > a[aria-current] { color: var(--green); font-weight: 700; }
-.main-layout { min-height: calc(100vh - 180px); padding-top: 48px; padding-bottom: 60px; }
+.main-layout { grid-column: 2; grid-row: 2; width: 100%; min-width: 0; min-height: calc(100vh - 180px); padding: 24px 16px 40px; }
 .page-heading { margin-bottom: 32px; }
 h1 { font-size: 34px; font-weight: 750; letter-spacing: -1px; margin-bottom: 12px; }
 h2 { font-size: 18px; margin: 0; font-weight: 700; }
@@ -37,7 +36,7 @@ h2 { font-size: 18px; margin: 0; font-weight: 700; }
 .status-reading { background: #fff3d9; color: #805909; }
 .status-done { background: #e2f1e7; color: #23654d; }
 .storage-note { padding: 18px 26px; margin: 0; color: var(--muted); font-size: 12px; }
-.back-link { display: inline-block; margin-bottom: 24px; font-size: 14px; text-decoration: none; }
+.back-link { display: inline-block; margin-bottom: 20px; font-size: 14px; text-decoration: none; }
 .form-card { max-width: 880px; padding: 32px; }
 .form-label { font-weight: 600; font-size: 14px; }
 .required { color: #ae3c34; }
@@ -58,10 +57,7 @@ h2 { font-size: 18px; margin: 0; font-weight: 700; }
 :focus-visible { outline: 3px solid #b68522; outline-offset: 3px; }
 @media (max-width: 767px) {
   .container { padding-left: 20px; padding-right: 20px; }
-  .nav-layout { flex-wrap: wrap; padding-top: 18px; padding-bottom: 16px; gap: 18px; }
-  .nav-links { width: 100%; gap: 12px; }
   .brand small { font-size: 9px; }
-  .main-layout { padding-top: 30px; padding-bottom: 40px; }
   h1 { font-size: 28px; }
   .page-heading { align-items: flex-start; flex-direction: column; gap: 18px; }
   .stats-grid { gap: 10px; }
@@ -73,10 +69,9 @@ h2 { font-size: 18px; margin: 0; font-weight: 700; }
   .form-actions .btn { flex: 1; }
   .storage-note { padding: 16px 20px; }
   .site-footer { align-items: flex-start; flex-direction: column; gap: 8px; }
-  .hero-example { margin-top: 0 !important; }
 }
 
-/* Assignment 02 style1.html: 초록색 헤더, 좌측 메뉴, 회색 푸터를 재사용 */
+/* 이전 과제의 초록색 헤더와 왼쪽 메뉴 스타일 */
     .brand {
       background-color: #04AA6D;
       color: white;
@@ -105,18 +100,14 @@ h2 { font-size: 18px; margin: 0; font-weight: 700; }
       font-size: 70%;
       line-height: 14px;
     }
-body { max-width: 1120px; margin: 20px auto; display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 4px; padding: 0 12px; }
 .site-header, .nav-layout { display: contents; }
 .brand { grid-column: 1 / -1; min-height: 82px; }
-.brand small { color: white; }
 .brand-icon { background: #ffffff22; }
 .nav-links { grid-column: 1; grid-row: 2; display: flex; flex-direction: column; align-items: stretch; justify-content: flex-start; gap: 0; padding-top: 8px; }
 .nav-links > a { display: block; padding: 10px 12px; text-decoration: none; color: black; font-size: 14px; text-align: left; }
 .nav-links > a:hover { background: white; color: #23342e; }
 .nav-links > a[aria-current]:not(.btn), .nav-links > .btn-primary { background: #04AA6D; border-color: #04AA6D; color: white; font-weight: bold; }
-.main-layout { grid-column: 2; grid-row: 2; width: 100%; min-width: 0; padding: 24px 16px 40px; }
 .site-footer { grid-column: 1 / -1; width: auto; }
-.back-link { margin-bottom: 20px; }
 @media (max-width: 767px) {
   body { margin: 8px auto; grid-template-columns: minmax(0, 1fr); padding: 0 8px; }
   .brand { flex-wrap: wrap; font-size: 21px; }

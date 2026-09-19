@@ -1,20 +1,44 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>도서 상세 | 책장</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  <link rel="stylesheet" href="my.css">
-  <script src="js/app.js" defer></script>
-</head>
-<body data-page="view">
-  <a class="skip-link" href="#main">본문으로 이동</a>
-  <header class="site-header"><nav class="container nav-layout" aria-label="주 메뉴">
-    <a class="brand" href="index.html"><span class="brand-icon" aria-hidden="true">冊</span> 책장 <small>BOOK SHELF</small></a>
-    <div class="nav-links"><a href="index.html" >도서 목록</a><a href="example.html" >Bootstrap 예제</a><a class="btn btn-primary" href="add.html">+ 도서 추가</a></div>
-  </nav></header>
-  <main id="main" class="container main-layout"><a class="back-link" href="index.html">← 도서 목록</a><div class="page-heading"><div><p class="eyebrow">BOOK DETAILS</p><h1>도서 상세</h1><p class="muted">책의 정보와 기록을 확인하세요.</p></div></div><div id="page-message" role="alert"></div><section id="book-detail" class="card detail-card"></section></main>
-  <footer class="container site-footer"><span>책장 · 나의 작은 도서관리 서비스</span><span>Open Source Studio · 배산 22300344</span></footer>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>도서 상세 | 책장</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="my.css">
+    <script src="js/app.js" defer></script>
+  </head>
+  <body data-page="view">
+    <a class="skip-link" href="#main">본문으로 이동</a>
+    <header class="site-header">
+      <nav class="container nav-layout" aria-label="주 메뉴">
+        <a class="brand" href="index.html">
+          <span class="brand-icon" aria-hidden="true">冊</span>
+          책장
+          <small>BOOK SHELF</small>
+        </a>
+        <div class="nav-links">
+          <a href="index.html">도서 목록</a>
+          <a href="example.html">Bootstrap 예제</a>
+          <a class="btn btn-primary" href="add.html">+ 도서 추가</a>
+        </div>
+      </nav>
+    </header>
+    <main id="main" class="container main-layout">
+      <a class="back-link" href="index.html">← 도서 목록</a>
+      <div class="page-heading">
+        <div>
+          <p class="eyebrow">BOOK DETAILS</p>
+          <h1>도서 상세</h1>
+          <p class="muted">책의 정보와 기록을 확인하세요.</p>
+        </div>
+      </div>
+      <div id="page-message" role="alert"></div>
+      <section id="book-detail" class="card detail-card"></section>
+    </main>
+    <footer class="container site-footer">
+      <span>책장 · 나의 작은 도서관리 서비스</span>
+      <span>Open Source Studio · 배산 22300344</span>
+    </footer>
+  </body>
 </html>

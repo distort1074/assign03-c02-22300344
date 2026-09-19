@@ -37,7 +37,12 @@ function saveBooks(books) {
   catch { alert('브라우저 저장소에 저장하지 못했습니다. 저장소 권한과 용량을 확인하세요.'); return false; }
 }
 function badge(status) {
-  const cls = status === '완독' ? 'status-done' : status === '읽는 중' ? 'status-reading' : '';
+  let cls = '';
+  if (status === '완독') {
+    cls = 'status-done';
+  } else if (status === '읽는 중') {
+    cls = 'status-reading';
+  }
   return `<span class="status-badge ${cls}">${escapeHTML(status)}</span>`;
 }
 function missingRecord() {
@@ -85,7 +90,10 @@ function init() {
     }
     form.addEventListener('submit', event => {
       event.preventDefault();
-      const values = Object.fromEntries(Object.keys(fieldLabels).map(key => [key,form.elements[key].value.trim()]));
+      const values = {};
+      for (const key of Object.keys(fieldLabels)) {
+        values[key] = form.elements[key].value.trim();
+      }
       const errors = validateBook(values);
       Object.keys(fieldLabels).forEach(key => {
         const input = form.elements[key];
@@ -93,7 +101,11 @@ function init() {
         input.setAttribute('aria-invalid', Boolean(errors[key]) ? 'true' : 'false');
         document.getElementById(`${key}-error`).textContent = errors[key] || '';
       });
-      if (Object.keys(errors).length) { form.elements[Object.keys(errors)[0]].focus(); return; }
+      const errorFields = Object.keys(errors);
+      if (errorFields.length > 0) {
+        form.elements[errorFields[0]].focus();
+        return;
+      }
       values.year = Number(values.year);
       if (page === 'edit' && !confirm('도서 정보를 수정할까요?')) return;
       const record = {...values, id: page === 'edit' ? book.id : crypto.randomUUID()};
